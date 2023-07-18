@@ -77,6 +77,7 @@ header > img {
   width: 4.2rem;
   height: 4.2rem;
   -o-object-fit: cover;
+  object-fit: cover;
 }
 
 .container {
@@ -152,4 +153,37 @@ footer p {
   text-align: center;
   padding: 1.6rem;
   font-weight: 600;
+}
+
+
+header{
+  --startY: -100%;
+  animation: move .2s;
+}
+
+footer{
+  --startY: 100%;
+  animation: move .2s;
+}
+
+@keyframes move {
+  from{
+    transform: translateY(var(--startY));
+  }
+}
+
+.item{
+  --delay: .4s;
+  animation: appear .4s var(--delay) backwards;
+}
+
+@keyframes appear{
+  0%{
+    opacity: 0;
+    transform: scale(.7);
+  }
+
+  50%{
+    transform: scale(1.2);
+  }
 }
